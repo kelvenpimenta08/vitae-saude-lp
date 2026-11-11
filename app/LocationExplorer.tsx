@@ -7,7 +7,7 @@ const locations = [
     id: 'volta-redonda',
     city: 'Volta Redonda',
     short: 'Unidade Volta Redonda',
-    address: 'Rua 33, nº 65, loja 4 — Vila Santa Cecília',
+    address: 'Av. Amaral Peixoto, nº 363, sala 101 — Centro',
     query: 'Vitae Saúde Volta Redonda RJ',
   },
   {
@@ -30,7 +30,7 @@ export default function LocationExplorer() {
       <div className="locations-copy">
         <p className="kicker"><span /> Encontre a Vitae</p>
         <h2 id="locations-title">Escolha a unidade mais perto de você.</h2>
-        <p>Selecione uma cidade para conferir o endereço, visualizar a localização e abrir o perfil da unidade no Google.</p>
+        <p>Selecione uma cidade para conferir o endereço informado pela Vitae, visualizar a localização e abrir a busca da unidade no Google.</p>
         <div className="location-tabs" role="tablist" aria-label="Unidades Vitae">
           {locations.map((location) => (
             <button key={location.id} type="button" role="tab" aria-selected={active.id === location.id} aria-controls="location-panel" className={active.id === location.id ? 'active' : ''} onClick={() => setActiveId(location.id)}>

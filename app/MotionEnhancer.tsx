@@ -3,18 +3,17 @@
 import { useEffect } from 'react';
 
 const revealSelector = [
-  '.statement > *',
   '.section-intro > *',
-  '.benefit-card',
-  '.how-heading > *',
   '.steps > li',
-  '.network-head > div',
-  '.network-card',
-  '.specialty-head > *',
-  '.specialty-list > div',
   '.plan-card',
+  '.quiz-intro > *',
+  '.quiz-card',
+  '.city-card',
+  '.specialty-list > div',
   '.locations-copy > *',
   '.location-panel',
+  '.exams-card > *',
+  '.human-proof > *',
   '.faq-list > details',
   '.final-cta > *',
 ].join(',');
@@ -50,37 +49,8 @@ export default function MotionEnhancer() {
 
     revealTargets.forEach((element) => revealObserver.observe(element));
 
-    const counters = Array.from(document.querySelectorAll<HTMLElement>('[data-count-to]'));
-    const counterObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const element = entry.target as HTMLElement;
-          const target = Number(element.dataset.countTo ?? 0);
-          const prefix = element.dataset.countPrefix ?? '';
-          const suffix = element.dataset.countSuffix ?? '';
-          const startedAt = performance.now();
-          const duration = 950;
-
-          const tick = (now: number) => {
-            const progress = Math.min((now - startedAt) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            element.textContent = `${prefix}${Math.round(target * eased)}${suffix}`;
-            if (progress < 1) requestAnimationFrame(tick);
-          };
-
-          requestAnimationFrame(tick);
-          counterObserver.unobserve(element);
-        });
-      },
-      { threshold: 0.65 },
-    );
-
-    counters.forEach((counter) => counterObserver.observe(counter));
-
     return () => {
       revealObserver.disconnect();
-      counterObserver.disconnect();
       root.classList.remove('motion-ready');
     };
   }, []);
