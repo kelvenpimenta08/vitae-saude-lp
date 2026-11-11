@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-const allowedFields = ['name', 'phone', 'city', 'people', 'reason', 'timing', 'recommendation', 'source', 'landing_url', 'captured_at', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
+const allowedFields = ['name', 'phone', 'city', 'people', 'reason', 'timing', 'recommendation', 'origin', 'source', 'google_campaign', 'ad_group', 'keyword', 'landing_url', 'captured_at', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
 export async function POST(request: Request) {
   const raw = await request.json().catch(() => null);
   if (!raw || typeof raw !== 'object') return NextResponse.json({ error: 'invalid_payload' }, { status: 400 });

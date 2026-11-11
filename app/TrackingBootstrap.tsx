@@ -13,7 +13,14 @@ export default function TrackingBootstrap() {
       root.dataLayer.push({ event: 'vitae_cta_click', cta: target.dataset.cta, page_url: window.location.href });
     };
     document.addEventListener('click', handler);
-    return () => document.removeEventListener('click', handler);
+    const sticky = document.querySelector<HTMLElement>('.mobile-whatsapp');
+    const updateSticky = () => sticky?.classList.toggle('is-visible', window.scrollY > 420);
+    updateSticky();
+    window.addEventListener('scroll', updateSticky, { passive: true });
+    return () => {
+      document.removeEventListener('click', handler);
+      window.removeEventListener('scroll', updateSticky);
+    };
   }, []);
   return null;
 }

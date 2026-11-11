@@ -33,12 +33,25 @@ export default function LeadQuiz() {
     if (name.trim().length < 2 || digits.length < 10) { setError('Preencha seu nome e um WhatsApp válido para continuar.'); return; }
     setSending(true); setError('');
     const tracking = getTracking();
-    const payload = { name: name.trim(), phone: digits, ...answers, recommendation: suggestion.title, source: tracking.utm_source || 'Google', landing_url: window.location.href, captured_at: new Date().toISOString(), ...tracking };
+    const payload = {
+      name: name.trim(),
+      phone: digits,
+      ...answers,
+      recommendation: suggestion.title,
+      origin: 'Google',
+      source: tracking.utm_source || 'Google',
+      google_campaign: tracking.utm_campaign,
+      ad_group: tracking.utm_content,
+      keyword: tracking.utm_term,
+      landing_url: window.location.href,
+      captured_at: new Date().toISOString(),
+      ...tracking,
+    };
     try {
       await fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), keepalive: true });
       const root = window as Window & { dataLayer?: Record<string, unknown>[] };
       root.dataLayer = root.dataLayer ?? [];
-      root.dataLayer.push({ event: 'vitae_lead', cidade: answers.city, pessoas: answers.people, motivo: answers.reason, timing: answers.timing, ...tracking });
+      root.dataLayer.push({ event: 'vitae_lead', origem: 'Google', cidade: answers.city, pessoas: answers.people, motivo: answers.reason, timing: answers.timing, campanha: tracking.utm_campaign, grupo_anuncios: tracking.utm_content, palavra_chave: tracking.utm_term, ...tracking });
       const message = [`Olá! Meu nome é ${name.trim()} e vim pelo site da Vitae.`, `Cidade: ${answers.city}`, `Pessoas: ${answers.people}`, `Motivo: ${answers.reason}`, `Momento: ${answers.timing}`, `Quero conhecer a opção indicada: ${suggestion.price}.`].join('\n');
       window.location.assign(`https://wa.me/5524998310561?text=${encodeURIComponent(message)}`);
     } catch { setError('Não foi possível concluir agora. Tente novamente ou fale diretamente pelo WhatsApp.'); setSending(false); }

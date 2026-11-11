@@ -1,48 +1,82 @@
-# Materiais necessários para finalizar a LP da Vitae
+# Roteiro de captação — Vitae Saúde
 
-## Prioridade 1 — prova real da rede
+Este é o material que realmente falta para cumprir integralmente o direcionamento do Arthur. O site já está funcionando sem imagens fictícias; estas fotos entram como prova local e permitem construir os carrosséis reais.
 
-Enviar fotos autorizadas, preferencialmente em formato horizontal e vertical, de cada clínica:
+## Orientação geral para amanhã
 
-- Renascer — fachada/entrada, recepção e ambiente interno;
-- Vie Santé — fachada/entrada, recepção e ambiente interno;
-- Villa Medical Center — fachada/entrada, recepção e ambiente interno;
-- Padre Pio — fachada/entrada, recepção e ambiente interno;
-- Centro Médico Santa Maria — fachada/entrada, recepção e ambiente interno.
+- Fotografar com o celular na maior qualidade disponível, sem filtros e sem modo retrato artificial.
+- Limpar a lente antes de começar.
+- Fazer cada cena uma vez na horizontal e uma vez na vertical.
+- Manter o celular reto, evitando paredes e portas inclinadas.
+- Preferir luz natural e ambientes organizados.
+- Enviar os arquivos originais por Drive, sem compressão do WhatsApp.
+- Evitar pacientes reconhecíveis. Se alguém aparecer, obter autorização expressa de uso de imagem.
+- Não fotografar prontuários, telas, documentos, nomes de pacientes ou informações médicas.
 
-Não é necessário produzir todas de uma vez. Com duas ou três fotos boas por clínica já é possível montar um carrossel leve.
+## Fotos das cinco clínicas parceiras
 
-## Prioridade 2 — prova social
+Captar de **3 a 6 fotos por clínica**, seguindo a mesma sequência:
 
-- Link exato do Perfil da Empresa no Google de Volta Redonda;
-- link exato do Perfil da Empresa no Google de Barra Mansa;
-- confirmação de qual perfil deve ser considerado oficial;
-- autorização para usar trechos de avaliações reais e o primeiro nome do autor;
-- depoimentos de clientes somente quando houver autorização de uso.
+1. Fachada completa com nome/placa legível — horizontal e vertical.
+2. Entrada vista da rua ou do corredor — horizontal.
+3. Recepção ampla, organizada e sem pessoas identificáveis — horizontal.
+4. Sala de espera ou ambiente interno representativo — horizontal e vertical.
+5. Detalhe de sinalização ou identidade da clínica — vertical.
+6. Um segundo ambiente interno, se for permitido.
 
-## Prioridade 3 — equipe e estrutura
+Clínicas:
 
-- fotos atuais e autorizadas do atendimento/equipe;
-- fotos das unidades Vitae;
-- confirmação do cargo/nome das pessoas que podem ser identificadas no site;
-- confirmação de que as imagens atuais da Aline e do profissional no hero podem permanecer.
+- Renascer — Volta Redonda;
+- Vie Santé — Volta Redonda;
+- Villa Medical Center — Volta Redonda;
+- Padre Pio — Barra Mansa;
+- Centro Médico Santa Maria — Barra Mansa.
 
-## Prioridade 4 — operação e integrações
+## Fotos das unidades e da equipe Vitae
 
-- URL ou credencial segura do webhook/API do Kommo;
-- IDs dos campos estruturados no Kommo: Cidade, Quantidade de pessoas, Motivo do interesse e Momento de compra;
-- confirmação da origem/pipeline/responsável padrão dos leads de Google Ads;
-- ID do Google Tag Manager ou Google Ads/GA4;
-- confirmação do número oficial de WhatsApp: **(24) 99831-0561**;
-- confirmação dos endereços oficiais de Volta Redonda e Barra Mansa.
+- Fachada/entrada da unidade de Volta Redonda.
+- Fachada/entrada da unidade de Barra Mansa.
+- Recepção e espaço de atendimento de cada unidade.
+- Uma foto horizontal da equipe reunida.
+- Duas ou três fotos naturais da equipe atendendo ou conversando, sem dados de clientes visíveis.
+- Uma foto vertical da Aline no ambiente real da Vitae, caso ela autorize.
+- Confirmação de autorização das duas pessoas que aparecem atualmente no hero.
 
-## Já preparado na LP
+## Google e depoimentos reais
 
-- captura de UTM Source, Medium, Campaign, Term e Content;
-- captura de GCLID;
-- URL da página e data/hora;
-- quatro respostas comerciais estruturadas;
-- recomendação inicial Individual x Familiar;
-- envio ao WhatsApp com contexto;
-- endpoint pronto para encaminhar ao Kommo quando o webhook for configurado;
-- eventos `vitae_cta_click` e `vitae_lead` disponíveis no `dataLayer`.
+- Link exato do Perfil da Empresa no Google de Volta Redonda.
+- Link exato do Perfil da Empresa no Google de Barra Mansa.
+- Indicação de qual perfil é o oficial caso exista duplicidade.
+- Autorização para utilizar nome e trecho de avaliações reais.
+- Depoimentos de clientes somente com texto verdadeiro e autorização.
+
+## Confirmações comerciais
+
+- WhatsApp oficial: confirmar **(24) 99831-0561**.
+- Endereço oficial de Volta Redonda: confirmar **Av. Amaral Peixoto, nº 363, sala 101 — Centro**.
+- Endereço oficial de Barra Mansa: confirmar **Rua Rio Branco, nº 60 — Centro**.
+- Confirmar que os números públicos estão atualizados: +7 anos, +4.000 famílias, 5 clínicas, +200 profissionais e +35 especialidades.
+- Confirmar que as consultas médicas são R$50 para todos os clientes Vitae nas condições comunicadas.
+
+## Kommo e mensuração
+
+Solicitar ao responsável técnico/comercial:
+
+- URL segura do webhook/API do Kommo;
+- IDs dos campos: Cidade, Quantidade de pessoas, Motivo do interesse e Momento de compra;
+- pipeline, etapa e responsável padrão para leads de Google Ads;
+- ID do Google Tag Manager ou tags de Google Ads/GA4;
+- definição de como o CRM devolverá venda e valor para medir CAC.
+
+## O que já está preparado tecnicamente
+
+- UTM Source, Medium, Campaign, Term e Content;
+- GCLID;
+- campanha Google, grupo de anúncios e palavra-chave em campos separados;
+- URL da landing page e data/hora;
+- cidade, quantidade de pessoas, motivo e timing;
+- recomendação Individual x Familiar;
+- origem fixa identificada como Google;
+- mensagem contextualizada no WhatsApp;
+- endpoint para encaminhamento ao Kommo quando o webhook for configurado;
+- eventos `vitae_cta_click` e `vitae_lead` no `dataLayer`.

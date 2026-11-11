@@ -101,7 +101,7 @@ export default function Home() {
       </div></section>
 
       <section className="final-cta"><div><p>Uma alternativa antes de precisar.</p><h2>Descubra qual opção faz mais sentido para você ou sua família.</h2></div><CTA variant="light" source="final">QUERO CONHECER OS PLANOS</CTA></section>
-      <footer><div className="footer-brand"><Brand /><p>Benefícios em saúde para Volta Redonda e Barra Mansa.</p></div><div className="footer-links"><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a><a href="https://www.instagram.com/vitae.br/" target="_blank" rel="noreferrer">Instagram</a><a href="#rede">Rede parceira</a></div><p className="legal">A Vitae é um programa de benefícios em saúde e não substitui plano de saúde. Serviços, valores, especialidades e disponibilidade estão sujeitos às condições da rede parceira.</p></footer>
+      <footer><div className="footer-brand"><Brand /><p>Benefícios em saúde para Volta Redonda e Barra Mansa.</p></div><div className="footer-links"><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a><a href="tel:+5524998310561">(24) 99831-0561</a><a href="https://www.instagram.com/vitae.br/" target="_blank" rel="noreferrer">Instagram</a><a href="#rede">Rede parceira</a></div><p className="legal">A Vitae é um programa de benefícios em saúde e não substitui plano de saúde. Serviços, valores, especialidades e disponibilidade estão sujeitos às condições da rede parceira.</p></footer>
       <a className="mobile-whatsapp" href="#triagem" data-cta="mobile-sticky">FALAR COM A VITAE <span>↗</span></a>
     </main>
   );
