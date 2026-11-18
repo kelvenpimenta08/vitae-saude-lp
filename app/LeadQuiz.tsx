@@ -22,6 +22,7 @@ export default function LeadQuiz() {
   const [answers, setAnswers] = useState<Partial<Answers>>({});
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [website, setWebsite] = useState('');
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
   const suggestion = useMemo(() => answers.people === 'Só para mim' ? { title: 'O Plano Individual pode fazer sentido para você.', price: 'R$99,90/mês' } : { title: 'Para sua família, vale conhecer o Plano Familiar.', price: 'R$209,90/mês' }, [answers.people]);
@@ -45,6 +46,7 @@ export default function LeadQuiz() {
       keyword: tracking.utm_term,
       landing_url: window.location.href,
       captured_at: new Date().toISOString(),
+      website,
       ...tracking,
     };
     try {
@@ -62,7 +64,7 @@ export default function LeadQuiz() {
     <div className="quiz-intro"><p className="kicker kicker-light"><span /> Responda em menos de 1 minuto</p><h2>Qual opção combina com o que você precisa?</h2><p>Quatro respostas rápidas ajudam a equipe a entender seu momento antes da conversa.</p><div className="quiz-privacy">Sem CPF, renda, diagnóstico ou dados médicos sensíveis.</div></div>
     <div className="quiz-card" aria-live="polite"><div className="quiz-progress"><span>Etapa {Math.min(step + 1, 5)} de 5</span><div><i style={{ width: `${((step + 1) / 5) * 100}%` }} /></div></div>
       {question ? <div className="quiz-question"><small>{String(step + 1).padStart(2, '0')}</small><h3>{question.title}</h3><div className="quiz-options">{question.options.map((option) => <button type="button" key={option} onClick={() => select(question.key, option)}><span>{option}</span><b>→</b></button>)}</div>{step > 0 && <button className="quiz-back" type="button" onClick={() => setStep((current) => current - 1)}>← Voltar</button>}</div>
-      : <form className="quiz-form" onSubmit={submit}><div className="quiz-result"><small>Orientação inicial</small><h3>{suggestion.title}</h3><strong>{suggestion.price}</strong><p>Essa é uma orientação comercial inicial. A equipe confirma as regras e a melhor opção na conversa.</p></div><label>Seu nome<input name="name" autoComplete="name" value={name} onChange={(event) => setName(event.target.value)} placeholder="Como podemos chamar você?" /></label><label>Seu WhatsApp<input name="phone" inputMode="tel" autoComplete="tel" value={phone} onChange={(event) => setPhone(event.target.value)} placeholder="(24) 99999-9999" /></label>{error && <p className="form-error">{error}</p>}<button className="cta cta-light quiz-submit" type="submit" disabled={sending}><span>{sending ? 'ENVIANDO...' : 'QUERO FALAR COM A VITAE'}</span><span className="arrow">↗</span></button><button className="quiz-back" type="button" onClick={() => setStep(3)}>← Rever respostas</button><p className="consent">Ao continuar, você autoriza o contato da equipe Vitae sobre os planos e benefícios.</p></form>}
+      : <form className="quiz-form" onSubmit={submit}><div className="quiz-result"><small>Orientação inicial</small><h3>{suggestion.title}</h3><strong>{suggestion.price}</strong><p>Essa é uma orientação comercial inicial. A equipe confirma as regras e a melhor opção na conversa.</p></div><label>Seu nome<input name="name" autoComplete="name" value={name} onChange={(event) => setName(event.target.value)} placeholder="Como podemos chamar você?" /></label><label>Seu WhatsApp<input name="phone" inputMode="tel" autoComplete="tel" value={phone} onChange={(event) => setPhone(event.target.value)} placeholder="(24) 99999-9999" /></label><label className="form-honeypot" aria-hidden="true">Seu site<input name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(event) => setWebsite(event.target.value)} /></label>{error && <p className="form-error">{error}</p>}<button className="cta cta-light quiz-submit" type="submit" disabled={sending}><span>{sending ? 'ENVIANDO...' : 'QUERO FALAR COM A VITAE'}</span><span className="arrow">↗</span></button><button className="quiz-back" type="button" onClick={() => setStep(3)}>← Rever respostas</button><p className="consent">Ao continuar, você autoriza o contato da equipe Vitae sobre os planos e benefícios e declara que leu a <a href="/politica-de-privacidade" target="_blank" rel="noreferrer">Política de Privacidade</a>.</p></form>}
     </div>
   </div></section>;
 }
