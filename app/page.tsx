@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import ClinicGallery from './ClinicGallery';
 import LeadQuiz from './LeadQuiz';
 import LocationExplorer from './LocationExplorer';
 import MotionEnhancer from './MotionEnhancer';
@@ -70,11 +71,7 @@ export default function Home() {
 
       <section id="rede" className="network section-shell">
         <div className="section-intro split-intro"><div><p className="kicker"><span /> Rede local e conhecida</p><h2>Onde você pode ser atendido.</h2></div><p>A equipe confirma a especialidade, a disponibilidade e as condições do parceiro antes do agendamento.</p></div>
-        <div className="city-grid">
-          <article className="city-card"><div className="city-card-head"><span>01</span><div><small>Rede Vitae</small><h3>Volta Redonda</h3></div></div><ul><li>Renascer</li><li>Vie Santé</li><li>Villa Medical Center</li></ul><a href="#unidades">Ver unidade e localização <Arrow /></a></article>
-          <article className="city-card city-card-green"><div className="city-card-head"><span>02</span><div><small>Rede Vitae</small><h3>Barra Mansa</h3></div></div><ul><li>Padre Pio</li><li>Centro Médico Santa Maria</li></ul><a href="#unidades">Ver unidade e localização <Arrow /></a></article>
-        </div>
-        <p className="network-note">Para preservar a confiança, a Vitae utiliza apenas fotos reais e autorizadas da rede parceira. As imagens da rede serão apresentadas conforme o material de cada unidade.</p>
+        <ClinicGallery />
       </section>
 
       <LocationExplorer />
@@ -87,7 +84,7 @@ export default function Home() {
 
       <section className="exams section-shell"><div className="exams-card"><div><p className="kicker kicker-light"><span /> Além das consultas</p><h2>Condições em exames também fazem parte dos benefícios.</h2></div><div><p>Clientes Vitae podem ter acesso a condições e descontos em exames laboratoriais e de imagem.</p><small>Os valores variam conforme o exame, o parceiro e a disponibilidade. A equipe confirma cada condição antes do uso.</small><CTA variant="light" source="exames">CONSULTAR UMA CONDIÇÃO</CTA></div></div></section>
 
-      <section className="human-proof section-shell"><div className="human-photo"><Image src="/vitae-pessoa-1.jpg" alt="Pessoa real da equipe Vitae" fill sizes="(max-width: 760px) 100vw, 44vw" /></div><div className="human-copy"><p className="kicker"><span /> Estrutura real na região</p><h2>Gente daqui, atendendo quem é daqui.</h2><p>A Vitae atua há mais de sete anos conectando famílias da região a uma rede local de clínicas e profissionais. Do primeiro contato à orientação de uso, existe uma equipe por trás do WhatsApp.</p><div className="review-pending"><strong>Prova que pode ser conferida</strong><p>Rede local identificada, unidades em Volta Redonda e Barra Mansa e atendimento humano para confirmar cada condição antes do uso.</p></div></div></section>
+      <section className="human-proof section-shell"><div className="human-photo"><Image src="/rede-real/aline-vitae.jpg" alt="Aline, integrante da equipe Vitae" fill sizes="(max-width: 760px) 100vw, 44vw" /></div><div className="human-copy"><p className="kicker"><span /> Estrutura real na região</p><h2>Gente daqui, atendendo quem é daqui.</h2><p>A Vitae atua há mais de sete anos conectando famílias da região a uma rede local de clínicas e profissionais. Do primeiro contato à orientação de uso, existe uma equipe por trás do WhatsApp.</p><div className="review-pending"><strong>Prova que pode ser conferida</strong><p>Rede local identificada, unidades em Volta Redonda e Barra Mansa e atendimento humano para confirmar cada condição antes do uso.</p></div></div></section>
 
       <section id="duvidas" className="faq section-shell"><div className="section-intro compact"><p className="kicker"><span /> Antes de falar com a equipe</p><h2>Respostas diretas para decidir melhor.</h2></div><div className="faq-list">
         <details><summary>A Vitae é plano de saúde?<span>＋</span></summary><p>Não. A Vitae é uma assinatura de benefícios em saúde para acesso à rede e utilização de serviços em condições diferenciadas. Não possui cobertura hospitalar de um plano de saúde tradicional.</p></details>

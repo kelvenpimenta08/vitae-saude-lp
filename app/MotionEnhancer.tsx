@@ -8,7 +8,7 @@ const revealSelector = [
   '.plan-card',
   '.quiz-intro > *',
   '.quiz-card',
-  '.city-card',
+  '.clinic-proof-card',
   '.specialty-list > div',
   '.locations-copy > *',
   '.location-panel',
