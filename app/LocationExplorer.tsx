@@ -7,7 +7,7 @@ const locations = [
     id: 'volta-redonda',
     city: 'Volta Redonda',
     short: 'Unidade Volta Redonda',
-    address: 'Av. Amaral Peixoto, nº 363, sala 101 — Centro',
+    address: 'A localização correta e atualizada é a indicada no mapa acima.',
     query: 'Vitae Saúde Volta Redonda RJ',
   },
   {

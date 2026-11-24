@@ -3,11 +3,11 @@ import ClinicGallery from './ClinicGallery';
 import LeadQuiz from './LeadQuiz';
 import LocationExplorer from './LocationExplorer';
 import MotionEnhancer from './MotionEnhancer';
+import SpecialtyExplorer from './SpecialtyExplorer';
 import TrackingBootstrap from './TrackingBootstrap';
 
 const whatsapp = 'https://wa.me/5524998310561?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Vitae%20e%20quero%20conhecer%20os%20planos.';
 
-const specialties = ['Endocrinologia', 'Ginecologia', 'Ortopedia', 'Pediatria', 'Cardiologia', 'Gastroenterologia', 'Psicologia', 'Psiquiatria', 'Reumatologia'];
 const facts = [['+7 anos', 'de atuação na região'], ['+4.000', 'famílias atendidas'], ['5', 'clínicas parceiras'], ['+200', 'profissionais credenciados'], ['+35', 'especialidades na rede']];
 
 function Arrow() { return <span aria-hidden="true" className="arrow">↗</span>; }
@@ -51,18 +51,19 @@ export default function Home() {
       <section id="como-funciona" className="how section-shell">
         <div className="section-intro split-intro"><div><p className="kicker"><span /> Sem surpresa na hora de usar</p><h2>Mensalidade e consulta, explicadas do jeito certo.</h2></div><p>A mensalidade mantém seu acesso à rede e aos benefícios. Quando precisar de consulta médica, clientes Vitae pagam R$50 por atendimento.</p></div>
         <ol className="steps">
-          <li><span>01</span><div><small>Escolha</small><h3>Seu plano</h3><p>Individual para uma pessoa ou Familiar para até sete pessoas.</p></div></li>
-          <li><span>02</span><div><small>Tenha acesso</small><h3>À rede Vitae</h3><p>Clínicas e profissionais parceiros em Volta Redonda e Barra Mansa.</p></div></li>
-          <li className="step-highlight"><span>03</span><div><small>Quando precisar</small><h3>Consulte por R$50</h3><p>Consultas médicas por R$50 para clientes Vitae, além das demais condições da rede.</p></div></li>
+          <li><div className="step-media"><Image src="/familia-vitae.png" alt="Família atendida pelos benefícios Vitae" fill sizes="(max-width: 680px) 100vw, 33vw" /></div><span>01</span><div><small>Escolha</small><h3>Seu plano</h3><p>Individual para uma pessoa ou Familiar para até sete pessoas.</p><a className="step-link" href="#planos">Comparar os planos</a></div></li>
+          <li><div className="step-media step-collage"><figure><Image src="/rede-real/renascer-recepcao.jpg" alt="Recepção da rede parceira Vitae" fill sizes="(max-width: 680px) 100vw, 22vw" /></figure><figure><Image src="/rede-real/villa-entrada.jpg" alt="Clínica da rede parceira Vitae" fill sizes="(max-width: 680px) 100vw, 11vw" /></figure><figure><Image src="/rede-real/santa-maria-recepcao.jpg" alt="Atendimento da rede parceira Vitae" fill sizes="(max-width: 680px) 100vw, 11vw" /></figure></div><span>02</span><div><small>Tenha acesso</small><h3>À rede Vitae</h3><p>Clínicas, exames e profissionais parceiros em Volta Redonda e Barra Mansa.</p><a className="step-link" href="#rede">Conhecer toda a rede</a></div></li>
+          <li className="step-highlight"><div className="step-media"><Image src="/clinicas/consultorio-vitae-v2.jpg" alt="Consultório disponível na rede Vitae" fill sizes="(max-width: 680px) 100vw, 33vw" /></div><span>03</span><div><small>Quando precisar</small><h3>Consulte por R$50</h3><p>Consultas médicas por R$50 para clientes Vitae, além das demais condições da rede.</p><a className="step-link" href="#triagem">Quero saber mais</a></div></li>
         </ol>
         <p className="how-note"><strong>Em resumo:</strong> você paga a mensalidade do plano e R$50 por consulta médica quando utilizar.</p>
       </section>
 
       <section id="planos" className="plans"><div className="section-shell">
         <div className="section-intro plans-head"><p className="kicker kicker-light"><span /> Opções claras</p><h2>Um plano para você.<br />Outro para a família.</h2><p>Os dois dão acesso à rede Vitae e às consultas médicas por R$50 para clientes.</p></div>
+        <div className="plans-proof"><div className="plans-proof-image"><Image src="/familia-vitae.png" alt="Opções Vitae para uma pessoa ou para a família" fill sizes="(max-width: 1020px) 100vw, 42vw" /></div><div><small>O que muda é para quem você quer cuidar</small><strong>Mesma rede. Mesmos benefícios. Você escolhe quantas pessoas incluir.</strong><p>Compare as duas opções abaixo e faça a triagem para conversar com a equipe.</p></div></div>
         <div className="plan-grid">
-          <article className="plan-card"><div className="plan-top"><span>Individual</span><b>01 pessoa</b></div><h3><sup>R$</sup>99<small>,90</small></h3><p className="per-month">por mês</p><p>Para quem busca uma alternativa para cuidar da própria saúde.</p><ul><li><Check />Acesso à rede e aos benefícios</li><li><Check />Consultas médicas por R$50</li><li><Check />Condições em exames conforme parceiro</li></ul><CTA variant="light" source="plano-individual">QUERO CONHECER</CTA></article>
-          <article className="plan-card featured"><div className="plan-top"><span>Familiar</span><b>Até 7 pessoas</b></div><h3><sup>R$</sup>209<small>,90</small></h3><p className="per-month">por mês</p><p>Para quem quer cuidar de si e da família em uma única opção.</p><ul><li><Check />Titular e dependentes conforme as regras</li><li><Check />Consultas médicas por R$50</li><li><Check />Condições em exames conforme parceiro</li></ul><CTA variant="light" source="plano-familiar">QUERO CONHECER</CTA></article>
+          <article className="plan-card"><div className="plan-top"><span>Individual</span><b>01 pessoa</b></div><p className="plan-best-for">Para cuidar de você</p><h3><sup>R$</sup>99<small>,90</small></h3><p className="per-month">por mês</p><p>Para quem busca uma alternativa para cuidar da própria saúde.</p><ul><li><Check />Acesso à rede e aos benefícios</li><li><Check />Consultas médicas por R$50</li><li><Check />Condições em exames conforme parceiro</li></ul><CTA variant="light" source="plano-individual">QUERO CONHECER</CTA></article>
+          <article className="plan-card featured"><div className="plan-top"><span>Familiar</span><b>Até 7 pessoas</b></div><p className="plan-best-for">Para cuidar de quem está com você</p><h3><sup>R$</sup>209<small>,90</small></h3><p className="per-month">por mês</p><p>Para quem quer cuidar de si e da família em uma única opção.</p><ul><li><Check />Titular e dependentes conforme as regras</li><li><Check />Consultas médicas por R$50</li><li><Check />Condições em exames conforme parceiro</li></ul><CTA variant="light" source="plano-familiar">QUERO CONHECER</CTA></article>
         </div>
         <p className="plan-disclaimer">A Vitae é uma assinatura de benefícios em saúde. A mensalidade dá acesso à rede; cada consulta médica utilizada custa R$50 para o cliente Vitae.</p>
       </div></section>
@@ -78,7 +79,7 @@ export default function Home() {
 
       <section id="especialidades" className="specialties section-shell">
         <div className="section-intro split-intro"><div><p className="kicker"><span /> Diferentes necessidades</p><h2>Especialidades que fazem parte da rotina.</h2></div><div className="specialty-total"><strong>+ DE 35</strong><span>especialidades na rede Vitae</span></div></div>
-        <div className="specialty-list">{specialties.map((item, index) => <div key={item}><span>{String(index + 1).padStart(2, '0')}</span><strong>{item}</strong></div>)}</div>
+        <SpecialtyExplorer />
         <div className="section-action"><CTA variant="outline" source="especialidades">QUERO VERIFICAR UMA ESPECIALIDADE</CTA><p>Disponibilidade de profissional e agenda deve ser confirmada com a equipe.</p></div>
       </section>
 
@@ -98,8 +99,7 @@ export default function Home() {
       </div></section>
 
       <section className="final-cta"><div><p>Uma alternativa antes de precisar.</p><h2>Descubra qual opção faz mais sentido para você ou sua família.</h2></div><CTA variant="light" source="final">QUERO CONHECER OS PLANOS</CTA></section>
-      <footer><div className="footer-brand"><Brand /><p>Benefícios em saúde para Volta Redonda e Barra Mansa.</p></div><div className="footer-links"><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a><a href="tel:+5524998310561">(24) 99831-0561</a><a href="https://www.instagram.com/vitae.br/" target="_blank" rel="noreferrer">Instagram</a><a href="#rede">Rede parceira</a><a href="/politica-de-privacidade">Privacidade</a></div><p className="legal">A Vitae é um programa de benefícios em saúde e não substitui plano de saúde. Serviços, valores, especialidades e disponibilidade estão sujeitos às condições da rede parceira.</p></footer>
-      <a className="mobile-whatsapp" href="#triagem" data-cta="mobile-sticky">FALAR COM A VITAE <span>↗</span></a>
+      <footer><div className="footer-brand"><Brand /><p>Benefícios em saúde para Volta Redonda e Barra Mansa.</p></div><div className="footer-links"><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a><a href="tel:+552433375791">(24) 3337-5791</a><a href="https://www.instagram.com/vitae.br/" target="_blank" rel="noreferrer">Instagram</a><a href="#rede">Rede parceira</a><a href="/politica-de-privacidade">Privacidade</a></div><p className="legal">A Vitae é um programa de benefícios em saúde e não substitui plano de saúde. Serviços, valores, especialidades e disponibilidade estão sujeitos às condições da rede parceira.</p></footer>
     </main>
   );
 }
